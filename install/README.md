@@ -12,10 +12,10 @@ docker-compose up -d
 ```
 
 * ansible-controller 컨테이너에 known_host등록하는 쉘 스크립트 실행
-
+****
 ```bash
 # ansible managed node 개수
-N=3
+N=2
 
 # 쉘 스크립트 실행
 docker-compose exec -it ansible-controller ./setup_ansible.sh ${N}
@@ -47,7 +47,7 @@ $ docker-compose exec -it ansible-controller bash
 # inventory 생성
 (ansible-controller container)$ cat <<EOT > inventory
 ansible-node0
-ansible-node0
+ansible-node1
 EOT
 
 # ping module 실행
