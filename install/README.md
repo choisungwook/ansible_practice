@@ -50,7 +50,7 @@ ansible-node0
 ansible-node0
 EOT
 
-# ping module 생성
+# ping module 실행
 (ansible-controller container)$ ansible -i inventory -m ping all
 ansible-node1 | SUCCESS => {
   "ansible_facts": {
