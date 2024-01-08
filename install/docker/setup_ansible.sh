@@ -10,5 +10,5 @@ fi
 
 rm -rf ~/.ssh/known_hosts
 for ((i=0; i<N; i++)); do
-  ssh-keyscan ansible-node${i} >> ~/.ssh/known_hosts
+  ssh-keyscan -trsa ansible-node${i} >> ~/.ssh/known_hosts
 done
