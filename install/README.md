@@ -12,7 +12,7 @@ docker-compose up -d
 ```
 
 * ansible-controller 컨테이너에 known_host등록하는 쉘 스크립트 실행
-****
+
 ```bash
 # ansible managed node 개수
 N=2
