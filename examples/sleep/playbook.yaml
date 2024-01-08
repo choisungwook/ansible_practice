@@ -1,0 +1,5 @@
+- name: Sleep for 1 minute
+  hosts: all
+  tasks:
+  - name: Sleep for 1 minute
+    command: sleep 60
