@@ -7,5 +7,5 @@ build:
 	docker buildx build --platform linux/arm64/v8,linux/amd64 -t choisunguk/ansible:3.11.7-bookworm-managed-node -f debian-managed-node.Dockerfile .
 
 push:
-	docker push choisunguk/ansible:3.11.7-bookworm-controller
-	docker push choisunguk/ansible:3.11.7-bookworm-managed-node
+	docker buildx build --push --platform linux/arm64/v8,linux/amd64 -t choisunguk/ansible:3.11.7-bookworm-controller -f debian-controller.Dockerfile .
+	docker buildx build --push --platform linux/arm64/v8,linux/amd64 -t choisunguk/ansible:3.11.7-bookworm-managed-node -f debian-managed-node.Dockerfile .
