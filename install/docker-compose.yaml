@@ -9,13 +9,13 @@ services:
     command: tail -f /dev/null
 
   ansible-node0:
-    container_name: ansible-node1
+    container_name: ansible-node0
     image: choisunguk/ansible:3.11.7-bookworm-managed-node
     networks:
       - ansible-network
 
   ansible-node1:
-    container_name: ansible-node2
+    container_name: ansible-node1
     image: choisunguk/ansible:3.11.7-bookworm-managed-node
     networks:
       - ansible-network
