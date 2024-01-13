@@ -1,0 +1,12 @@
+- name: Create users
+  hosts: localhost
+  vars_files:
+    - password.txt
+
+  tasks:
+    - name: Create password file
+      ansible.builtin.lineinfile:
+        path: /tmp/password.txt
+        line: "password={{ password }}"
+        create: true
+        mode: '0600'
