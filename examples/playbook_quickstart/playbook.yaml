@@ -1,0 +1,17 @@
+- name: Create users
+  hosts: all
+  tasks:
+    - name: Create user 'bob'
+      ansible.builtin.user:
+        name: bob
+        state: present
+
+    - name: Create user 'alice1'
+      ansible.builtin.user:
+        name: alice1
+        state: present
+
+    - name: Create user 'john'
+      ansible.builtin.user:
+        name: john
+        state: present
