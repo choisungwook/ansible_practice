@@ -1,0 +1,28 @@
+- name: Loop inline
+  hosts: localhost
+
+  tasks:
+    - name: Apt update
+      ansible.builtin.apt:
+        update_cache: true
+      become: true
+
+    - name: Apt install packages
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+      become: true
+      loop:
+        - vim
+        - gittttt # 실패해도 아래 반복문이 실행된다
+        - curl
+        - wget
+
+    # 아래 Task는 실행되지 않음
+    - name: Apt install packages with fail
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - vim
+        - curl
