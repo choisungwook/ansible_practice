@@ -1,4 +1,4 @@
-- name: Loop inline
+- name: Loop
   hosts: localhost
 
   tasks:

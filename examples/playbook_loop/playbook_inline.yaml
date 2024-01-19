@@ -1,8 +1,8 @@
-- name: loop inline
+- name: Loop
   hosts: localhost
 
   tasks:
-    - name: echo loop
+    - name: Echo loop
       ansible.builtin.debug:
         msg: "{{ item }}"
       loop:
