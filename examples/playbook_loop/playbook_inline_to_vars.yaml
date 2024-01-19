@@ -1,4 +1,4 @@
-- name: loop inline
+- name: Loop
   hosts: localhost
   vars:
     pacages:
@@ -7,6 +7,6 @@
       - 3
 
   tasks:
-    - name: echo loop
+    - name: Echo loop
       ansible.builtin.debug:
         msg: "{{ pacages }}"
