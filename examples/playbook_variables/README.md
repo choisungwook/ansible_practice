@@ -3,6 +3,7 @@
 
 # 예제 목차
 * [key-value](./playbook_key_value.yaml)
+* [dictonary](./playbook_dict.yaml)
 * [list](./playbook_list.yaml)
 * [file을 사용](./playbook_file.yaml)
 
