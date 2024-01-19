@@ -2,7 +2,7 @@
   hosts: localhost
 
   tasks:
-    - name: Echo end
+    - name: Echo start
       ansible.builtin.debug:
         msg: "start"
 
@@ -12,6 +12,6 @@
       # 실패를 무시하려면 주석을 해제하세요
       # ignore_errors: yes
 
-    - name: Echo start
+    - name: Echo end
       ansible.builtin.debug:
         msg: "end"
