@@ -4,7 +4,7 @@
 # playbook 실행 방법
 
 ```bash
-ansible-playbook -i ./inventory playbook.yaml
+ansible-playbook -i playbook.yaml
 ```
 
 # 참고자료
