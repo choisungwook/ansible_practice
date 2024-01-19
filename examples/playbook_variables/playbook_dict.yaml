@@ -1,0 +1,14 @@
+- name: Variables key value
+  hosts: localhost
+  vars:
+    dummy:
+      a: a1
+      b: b1
+
+  tasks:
+    - name: Echo a
+      ansible.builtin.debug:
+        msg: "{{ dummy.a }}"
+    - name: Echo b
+      ansible.builtin.debug:
+        msg: "{{ dummy.b }}"
