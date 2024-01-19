@@ -1,0 +1,18 @@
+- name: Variables key value
+  hosts: localhost
+  vars_files:
+    - vars.yaml
+
+  tasks:
+    - name: Echo vars
+      ansible.builtin.debug:
+        msg: "{{ hello }}"
+    - name: Echo index 0
+      ansible.builtin.debug:
+        msg: "{{ alphabets[0] }}"
+    - name: Echo index 1
+      ansible.builtin.debug:
+        msg: "{{ alphabets[1] }}"
+    - name: Echo index 2
+      ansible.builtin.debug:
+        msg: "{{ alphabets[2] }}"
