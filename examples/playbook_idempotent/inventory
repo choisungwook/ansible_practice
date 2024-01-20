@@ -1,0 +1,5 @@
+[debian]
+ansible-node0
+
+[rocky]
+ansible-node1
