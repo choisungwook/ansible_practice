@@ -1,0 +1,20 @@
+---
+- name: Dictionary loop
+  hosts: localhost
+  vars:
+    file_list:
+      - filepath: /tmp/a.txt
+        filecontent: hello_world_a
+      - filepath: /tmp/b.txt
+        filecontent: hello_world_b
+      - filepath: /tmp/c.txt
+        filecontent: hello_world_c
+
+  tasks:
+    - name: Create file
+      ansible.builtin.lineinfile:
+        path: "{{ item.filepath }}"
+        line: "{{ item.filecontent }}"
+        create: true
+        mode: '0644'
+      loop: "{{ file_list }}"
