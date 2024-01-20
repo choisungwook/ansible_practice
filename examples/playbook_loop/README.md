@@ -5,6 +5,7 @@
 * [인라인 반복문](./playbook_inline.yaml)
 * [반복문 실패](./playbook_apt_with_fail.yaml)
 * [변수를 사용하여 반복문](./playbook_inline_to_vars.yaml)
+* [딕셔너리 리스트 변수를 사용하여 반복문](./playbook_dictionary.yaml)
 
 # playbook 실행 방법
 
