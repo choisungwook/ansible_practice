@@ -6,6 +6,7 @@
 * [dictonary](./playbook_dict.yaml)
 * [list](./playbook_list.yaml)
 * [file을 사용](./playbook_file.yaml)
+* [register 예제](./playbook_register.yaml)
 
 # playbook 실행 방법
 

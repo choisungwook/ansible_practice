@@ -1,0 +1,12 @@
+---
+- name: Example Playbook with Register
+  hosts: localhost
+
+  tasks:
+    - name: Run the 'uptime' command
+      ansible.builtin.command: uptime
+      register: uptime_result
+
+    - name: Display the result
+      ansible.builtin.debug:
+        msg: "{{ uptime_result.stdout }}"
