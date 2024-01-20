@@ -5,7 +5,9 @@ create_builder:
 build:
 	docker buildx build --platform linux/arm64/v8,linux/amd64 -t choisunguk/ansible:3.11.7-bookworm-controller -f debian-controller.Dockerfile .
 	docker buildx build --platform linux/arm64/v8,linux/amd64 -t choisunguk/ansible:3.11.7-bookworm-managed-node -f debian-managed-node.Dockerfile .
+	docker buildx build --platform linux/arm64/v8,linux/amd64 -t choisunguk/ansible:3.9-rocky-managed-node -f rocky-managed-node.Dockerfile .
 
 push:
 	docker buildx build --push --platform linux/arm64/v8,linux/amd64 -t choisunguk/ansible:3.11.7-bookworm-controller -f debian-controller.Dockerfile .
 	docker buildx build --push --platform linux/arm64/v8,linux/amd64 -t choisunguk/ansible:3.11.7-bookworm-managed-node -f debian-managed-node.Dockerfile .
+	docker buildx build --push --platform linux/arm64/v8,linux/amd64 -t choisunguk/ansible:3.9-rocky-managed-node -f rocky-managed-node.Dockerfile .
