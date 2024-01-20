@@ -8,15 +8,17 @@ services:
       - ansible-network
     command: tail -f /dev/null
 
+  # debian bookworm linux
   ansible-node0:
     container_name: ansible-node0
     image: choisunguk/ansible:3.11.7-bookworm-managed-node
     networks:
       - ansible-network
 
+  # rocky linux
   ansible-node1:
     container_name: ansible-node1
-    image: choisunguk/ansible:3.11.7-bookworm-managed-node
+    image: choisunguk/ansible:3.9-rocky-managed-node
     networks:
       - ansible-network
 
