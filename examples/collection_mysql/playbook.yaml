@@ -1,0 +1,17 @@
+- name: Mysql example
+  hosts: localhost
+
+  pre_tasks:
+    - name: Install pymysql
+      ansible.builtin.pip:
+        name: pymysql
+        state: present
+
+  tasks:
+    - name: Create user
+      community.mysql.mysql_user:
+        login_host: localhost
+        login_user: root
+        login_password: password1234
+        name: testuser
+        state: absent
