@@ -13,5 +13,7 @@
         login_host: localhost
         login_user: root
         login_password: password1234
-        name: testuser
-        state: absent
+        name: bob
+        password: 12345
+        priv: '*.*:ALL'
+        state: present
