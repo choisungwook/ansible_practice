@@ -8,6 +8,19 @@
 docker run --name mysql  --rm -e MYSQL_ROOT_PASSWORD=root -e MYSQL_ROOT_PASSWORD=password1234 -p 3306:3306 -d mysql:8.3.0
 ```
 
+# 실행방법
+
+* playbook 실행
+```sh
+ansible-playbook playbook.yaml
+```
+
+* 계정 확인
+
+```sh
+docker exec -it mysql mysql -uroot -ppassword1234 -e "SELECT user,host FROM mysql.user;"
+```
+
 
 # 참고자료
 * https://galaxy.ansible.com/ui/standalone/roles/geerlingguy/mysql/install/
