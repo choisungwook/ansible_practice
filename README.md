@@ -9,3 +9,4 @@
 * [playbook 실행 실패 예제](./examples/playbook_failed/)
 * [playbook 변수](./examples/playbook_variables/)
 * [playbook 반복문](./examples/playbook_loop/)
+* [ansible mysql collection 예제](./examples/collection_mysql/)
