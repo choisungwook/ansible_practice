@@ -31,7 +31,7 @@ USER $USERNAME
 WORKDIR /home/$USERNAME
 
 # setup ssh
-COPY --chown=$USERNAME:$USERNAME ./id_rsa.pub ./.ssh/authorized_keys
+COPY --chown=$USERNAME:$USERNAME ./key-pair/id_rsa.pub ./.ssh/authorized_keys
 
 EXPOSE 22
 

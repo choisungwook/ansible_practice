@@ -27,5 +27,5 @@ ENV PATH=$PATH:/home/$USERNAME/.local/bin
 
 # setup ssh
 COPY --chown=$USERNAME:$USERNAME --chmod=755 ./setup_ansible.sh ./ansible_workspace/setup_ansible.sh
-COPY --chown=$USERNAME:$USERNAME --chmod=700 ./id_rsa ./.ssh/id_rsa
-COPY --chown=$USERNAME:$USERNAME ./id_rsa.pub ./.ssh/id_rsa.pub
+COPY --chown=$USERNAME:$USERNAME --chmod=700 ./key-pair/id_rsa ./.ssh/id_rsa
+COPY --chown=$USERNAME:$USERNAME ./key-pair/id_rsa.pub ./.ssh/id_rsa.pub
