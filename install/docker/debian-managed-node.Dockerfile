@@ -1,17 +1,29 @@
 FROM python:3.11.7-bookworm
 
-# install ansible
-RUN pip install --no-cache-dir ansible
+# ADD USER
+ARG USERNAME=ansible
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
 
-# install ssh-server and setup
-COPY ./id_rsa.pub /root/.ssh/authorized_keys
-RUN apt update && apt install openssh-server -y
+# Create the user
+RUN groupadd --gid $USER_GID $USERNAME \
+    && useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+    && apt-get update \
+    && apt-get install -y sudo \
+    && echo $USERNAME ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/$USERNAME \
+    && chmod 0440 /etc/sudoers.d/$USERNAME
 
 # install tools
-RUN apt install -y --no-install-recommends iputils-ping net-tools vim jq
+RUN apt update \
+    && apt install -y --no-install-recommends iputils-ping net-tools vim jq openssh-server
 
-WORKDIR /root/ansible_workspace/
+USER $USERNAME
+
+WORKDIR /home/$USERNAME
+
+# setup ssh
+COPY --chown=$USERNAME:$USERNAME ./id_rsa.pub ./.ssh/authorized_keys
 
 EXPOSE 22
 
-ENTRYPOINT service ssh start && tail -f /dev/null
+ENTRYPOINT sudo service ssh start && tail -f /dev/null
