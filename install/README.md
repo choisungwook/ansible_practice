@@ -7,13 +7,17 @@
 * docker와 docker-compose 사용방법
 
 # 실행 방법
-```bash
+```sh
+# (옵션 1) root user
 docker-compose up -d
+
+# (옵션 2) no root user
+docker compose -f docker-compose-noroot.yaml up -d
 ```
 
 * ansible-controller 컨테이너에 known_host등록하는 쉘 스크립트 실행
 
-```bash
+```sh
 # ansible managed node 개수
 N=2
 
@@ -24,7 +28,7 @@ docker-compose exec -it ansible-controller ./setup_ansible.sh ${N}
 # ansible-controller 터미널 접속 방법
 * docker 컨테이너 확인
 
-```bash
+```sh
 $ docker-compose ps
 NAME                 SERVICE              CREATED         STATUS         PORTS
 ansible-controller   ansible-controller   2 minutes ago   Up 2 minutes
@@ -34,15 +38,15 @@ ansible-node2        ansible-node1        2 minutes ago   Up 2 minutes   22/tcp
 
 * ansible-controller 컨테이너 터미널 접속
 
-```bash
-docker-compose exec -it ansible-controller bash
+```sh
+docker-compose exec -it ansible-controller sh
 ```
 
 # 테스트
 * ansible ping module 실행
 
-```bash
-$ docker-compose exec -it ansible-controller bash
+```sh
+$ docker-compose exec -it ansible-controller sh
 
 # inventory 생성
 (ansible-controller container)$ cat <<EOT > inventory

@@ -1,5 +1,6 @@
 - name: Loop
   hosts: localhost
+  become: true
 
   tasks:
     - name: Apt update

@@ -1,5 +1,6 @@
 - name: Example
   hosts: debian
+  become: true
 
   tasks:
     - name: Install curl (non-idempotent)

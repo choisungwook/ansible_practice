@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  ansible-controller:
+    container_name: ansible-controller
+    image: choisunguk/ansible:3.11.7-bookworm-controller-noroot
+    networks:
+      - ansible-network
+    command: tail -f /dev/null
+
+  # debian bookworm linux
+  ansible-node0:
+    container_name: ansible-node0
+    image: choisunguk/ansible:3.11.7-bookworm-managed-node-noroot
+    networks:
+      - ansible-network
+
+  # rocky linux
+  ansible-node1:
+    container_name: ansible-node1
+    image: choisunguk/ansible:3.9-rocky-managed-node-noroot
+    networks:
+      - ansible-network
+
+networks:
+  ansible-network:
+    driver: bridge
